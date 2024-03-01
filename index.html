@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>求职页面</title>
+<!-- 这里可以添加CSS样式链接 -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>欢迎来到我们的求职页面</h1>
+  <nav>
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">关于我们</a></li>
+      <li><a href="#">职位</a></li>
+      <li><a href="#">联系我们</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="company-info">
+    <h2>公司简介</h2>
+    <p>我们是一家领先的科技公司，专注于创新和技术驱动的产品。</p>
+    <!-- 这里可以添加更多关于公司的信息 -->
+  </section>
+
+  <section id="job-details">
+    <h2>职位详情</h2>
+    <h3>软件工程师</h3>
+    <p>我们正在寻找一位富有才华和创造力的软件工程师加入我们的团队。</p>
+    <ul>
+      <li>负责软件的设计、开发和维护</li>
+      <li>参与需求分析，提供技术解决方案</li>
+      <li>与团队合作，确保项目的按时交付和高质量</li>
+    </ul>
+    <!-- 这里可以添加更多关于职位的要求和详情 -->
+  </section>
+
+  <section id="application-form">
+    <h2>申请表单</h2>
+    <form action="submit-job.php" method="post">
+      <div>
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">电子邮件:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="resume">简历:</label>
+        <input type="file" id="resume" name="resume" required>
+      </div>
+      <div>
+        <label for="cover-letter">求职信:</label>
+        <textarea id="cover-letter" name="cover-letter" required></textarea>
+      </div>
+      <div>
+        <button type="submit">提交申请</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2023 我们的公司. 所有权利保留.</p>
+</footer>
+
+<!-- 这里可以添加JavaScript脚本链接 -->
+<script src="scripts.js"></script>
+
+</body>
+</html>
