@@ -3,20 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>求职页面</title>
-<!-- 这里可以添加CSS样式链接 -->
+<title>求职申请</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+}
+</style>
 </head>
 <body>
 
 <header>
-  <h1>欢迎来到我们的求职页面</h1>
+  <h1>欢迎您的到来</h1>
   <nav>
     <ul>
       <li><a href="#">首页</a></li>
       <li><a href="#">关于我们</a></li>
-      <li><a href="#">职位</a></li>
-      <li><a href="#">联系我们</a></li>
+      <li><a href="#">产品介绍</a></li>
+      <li><a href="http://api.starchent.top/API/qqtz.php?qq=564992150">联系我们</a></li>
     </ul>
   </nav>
 </header>
@@ -24,25 +30,16 @@
 <main>
   <section id="company-info">
     <h2>公司简介</h2>
-    <p>我们是一家领先的科技公司，专注于创新和技术驱动的产品。</p>
-    <!-- 这里可以添加更多关于公司的信息 -->
+    <p>我们是一家领先的公司，专注于创新和技术驱动的产品。</p>
   </section>
 
   <section id="job-details">
-    <h2>职位详情</h2>
-    <h3>软件工程师</h3>
-    <p>我们正在寻找一位富有才华和创造力的软件工程师加入我们的团队。</p>
-    <ul>
-      <li>负责软件的设计、开发和维护</li>
-      <li>参与需求分析，提供技术解决方案</li>
-      <li>与团队合作，确保项目的按时交付和高质量</li>
-    </ul>
-    <!-- 这里可以添加更多关于职位的要求和详情 -->
+    <!-- 这里可以添加职位描述或其他相关信息 -->
   </section>
 
   <section id="application-form">
-    <h2>申请表单</h2>
-    <form action="submit-job.php" method="post">
+    <h2>加入我们</h2>
+    <form id="job-application-form">
       <div>
         <label for="name">姓名:</label>
         <input type="text" id="name" name="name" required>
@@ -52,26 +49,45 @@
         <input type="email" id="email" name="email" required>
       </div>
       <div>
-        <label for="resume">简历:</label>
+        <label for="resume">上传文件:</label>
         <input type="file" id="resume" name="resume" required>
       </div>
       <div>
-        <label for="cover-letter">求职信:</label>
-        <textarea id="cover-letter" name="cover-letter" required></textarea>
+        <label for="cover-letter">留言:</label>
+        <textarea id="cover-letter" name="cover-letter" rows="4" required></textarea>
       </div>
       <div>
         <button type="submit">提交申请</button>
       </div>
     </form>
   </section>
-</main>
 
-<footer>
-  <p>© 2023 我们的公司. 所有权利保留.</p>
-</footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 获取表单元素
+      var form = document.getElementById('job-application-form');
 
-<!-- 这里可以添加JavaScript脚本链接 -->
-<script src="scripts.js"></script>
+      // 为表单添加提交事件监听器
+      form.addEventListener('submit', function(event) {
+        // 阻止表单默认的提交行为
+        event.preventDefault();
 
+        // 获取表单输入的值
+        var name = document.querySelector('#name').value;
+        var email = document.querySelector('#email').value;
+        var resume = document.querySelector('#resume').files[0];
+        var coverLetter = document.querySelector('#cover-letter').value;
+
+        // 显示提交成功的提示消息
+        alert('申请已提交！\n姓名: ' + name + '\n电子邮件: ' + email + '\n留言: ' + coverLetter);
+
+        // 可选：将表单数据发送到服务器（这里仅显示消息，未实际发送数据）
+        // 您可以使用Ajax或其他方法将数据发送到服务器进行处理
+
+        // 清空表单输入字段（可选）
+        form.reset();
+      });
+    });
+  </script>
 </body>
 </html>
